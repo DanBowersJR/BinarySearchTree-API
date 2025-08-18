@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Binary Search Tree Visualizer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Matrix Background -->
+<canvas id="matrixRain"></canvas>
+
+<div class="container">
+    <h1>Binary Search Tree (BST) Visualizer</h1>
+
+    <!-- Input Section -->
+    <div class="input-row">
+        <input id="numbersInput" type="text" placeholder="Enter numbers, e.g. 7, 3, 9, 2, 5">
+        <div class="button-row">
+            <button onclick="submitNumbers()">Submit</button>
+            <button onclick="showPrevious()">Show Previous</button>
+            <button onclick="clearTree()">Clear</button>
+        </div>
+    </div>
+
+    <!-- Results -->
+    <h2>Tree JSON Output</h2>
+    <pre id="resultBox"></pre>
+
+    <!-- Canvas -->
+    <h2>Tree Visualization</h2>
+    <canvas id="treeCanvas"></canvas>
+</div>
+
+<!-- Scripts -->
+<script src="script.js"></script>
+</body>
+</html>

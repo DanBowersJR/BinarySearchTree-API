@@ -1,0 +1,137 @@
+/* ===== Global ===== */
+body {
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    overflow-y: auto;           /* allow scroll */
+    overflow-x: hidden;         /* stop sideways scroll */
+    background: #000;           /* fallback */
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    color: #00ff99;
+    font-family: "Courier New", monospace; /* Matrix terminal font */
+}
+
+/* Matrix Rain Canvas */
+#matrixRain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;        /* stays behind UI */
+    background: black;  /* fallback if script fails */
+}
+
+/* ===== Container ===== */
+.container {
+    max-width: 950px;
+    margin: 40px auto;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 0 25px rgba(0, 255, 153, 0.4);
+    position: relative;
+    z-index: 10; /* above rain */
+}
+
+/* ===== Headings ===== */
+h1, h2 {
+    text-align: center;
+    color: #00ff99;
+    font-family: "Courier New", monospace;
+    text-shadow:
+            0 0 5px #00ff99,
+            0 0 15px #00ff99,
+            0 0 25px #00ff99;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 10;
+
+    /* Neon outline (stroke) */
+    -webkit-text-stroke: 1px black;
+}
+
+/* ===== Input Row Wrapper ===== */
+.input-row {
+    display: flex;
+    flex-direction: column;   /* stack input above buttons */
+    align-items: center;      /* center horizontally */
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+/* ===== Input Styling ===== */
+#numbersInput {
+    padding: 12px;
+    width: 70%;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    font-family: "Courier New", monospace;
+    color: #00ff99;
+    background: #111;
+    box-shadow: 0 0 10px rgba(0,255,0,0.4);
+    position: relative;
+    z-index: 10;
+    margin-bottom: 12px; /* spacing before buttons */
+}
+
+/* ===== Buttons ===== */
+.button-row {
+    display: flex;
+    justify-content: center; /* center the buttons under input */
+    flex-wrap: wrap;         /* wrap nicely on small screens */
+    gap: 10px;               /* spacing between buttons */
+    margin-top: 5px;
+}
+
+button {
+    background: #00ff99;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-family: "Courier New", monospace;
+    color: #000;
+    cursor: pointer;
+    transition: transform 0.15s ease, background 0.2s;
+    box-shadow: 0 0 10px #00ff99;
+    position: relative;
+    z-index: 10;
+}
+
+button:hover {
+    background: #2ecc71;
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #00ff99;
+}
+
+/* ===== JSON Box ===== */
+pre {
+    background: #111;
+    padding: 15px;
+    border-radius: 8px;
+    max-height: 250px;
+    overflow-y: auto;
+    font-size: 14px;
+    font-family: "Courier New", monospace;
+    color: #00ff99;
+    box-shadow: inset 0 0 10px rgba(0,255,0,0.3);
+    position: relative;
+    z-index: 10;
+}
+
+/* ===== Canvas Tree Area ===== */
+canvas {
+    border: 2px solid #00ff99;
+    border-radius: 8px;
+    background: #000;
+    width: 100%;
+    height: 600px; /* taller so tree fits */
+    display: block;
+    margin: 20px auto;
+    box-shadow: 0 0 20px rgba(0,255,0,0.5);
+    position: relative;
+    z-index: 10;
+}
