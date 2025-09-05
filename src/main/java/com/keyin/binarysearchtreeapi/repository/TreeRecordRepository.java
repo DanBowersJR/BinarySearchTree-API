@@ -9,9 +9,6 @@ import java.util.Optional;
 @Repository
 public interface TreeRecordRepository extends JpaRepository<TreeRecord, Long> {
 
-    // 🔹 Find a record by its value
-    Optional<TreeRecord> findByValue(int value);
-
-    // 🔹 Delete a record directly by its value
-    void deleteByValue(int value);
+    // Get the most recently saved tree record
+    Optional<TreeRecord> findTopByOrderByIdDesc();
 }
